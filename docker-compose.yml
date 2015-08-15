@@ -1,7 +1,7 @@
 web:
-    image: mkenney/common-web:v0.0.1
+    image: mkenney/base-web:latest
     ports:
-        - "56080:80"
+        - "80:80"
     hostname: docker.9c0.com
     volumes:
         - .:/var/www/html/
