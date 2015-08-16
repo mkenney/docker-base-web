@@ -1,7 +1,8 @@
 web:
     image: mkenney/base-web:latest
+    container_name: www
     ports:
-        - "80:80"
+        - "80"
     hostname: docker.9c0.com
     volumes:
         - .:/var/www/html/
@@ -12,4 +13,6 @@ web:
         - server_env=dev
         - env=1
         - is_docker=1
-        - HTTPD_CONF_SERVERNAME=docker.9c0.com
+        - VIRTUAL_HOST=docker.9c0.com # Used in the vhost config and can also be
+                                      # used by jwilder/nginx-proxy reverse proxy
+                                      # docker container

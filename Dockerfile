@@ -32,4 +32,3 @@ RUN yum install -y php-mcrypt; yum clean all
 COPY etc/httpd/conf.d/vhost.conf /etc/httpd/conf.d/vhost.conf
 
 ENTRYPOINT /usr/sbin/httpd -D FOREGROUND
-
