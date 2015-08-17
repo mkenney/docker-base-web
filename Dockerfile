@@ -28,6 +28,6 @@ RUN yum install -y php-bcmath; yum clean all
 RUN yum install -y php-mcrypt; yum clean all
 
 # Configure Apache
-COPY etc/httpd/conf.d/vhost.conf /etc/httpd/conf.d/vhost.conf
+COPY container/etc/httpd/conf.d/vhost.conf /etc/httpd/conf.d/vhost.conf
 
 ENTRYPOINT /usr/sbin/httpd -D FOREGROUND
