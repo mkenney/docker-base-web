@@ -6,8 +6,7 @@ web:
     hostname: docker.9c0.com
     volumes:
         - .:/var/www/html/
-        - /tmp:/tmp
-        - /tmp/common-web-logs/log/httpd:/var/log/httpd
+        - /tmp/docker/var/log/httpd:/var/log/httpd
         - /etc/localtime:/etc/localtime:ro
     environment:
         - server_env=dev
