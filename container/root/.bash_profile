@@ -1,5 +1,7 @@
 # ~/.bash_profile
 
+export TERM=xterm
+
 # Aliases
 if [ -f ~/.bash/color ]; then
 	. ~/.bash/color
