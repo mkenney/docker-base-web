@@ -19,6 +19,12 @@ COPY container/etc/php.ini /usr/local/etc/php/php.ini
 # Configure terminal
 COPY container/root/ /root/
 
+RUN mkdir -p /var/log/httpd/ \
+    && ln -s /dev/stdout /var/log/httpd/access.log \
+    && ln -s /dev/stderr /var/log/httpd/error.log \
+    && ln -s /dev/stderr /var/log/httpd/php.log \
+    && a2enmod headers
+
 WORKDIR /var/www/html
 
 EXPOSE 80

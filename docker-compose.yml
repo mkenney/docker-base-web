@@ -1,9 +1,9 @@
 web:
     image: mkenney/base-web:latest
-    container_name: base-web
+    container_name: mkenney-base-web
     ports:
         - "80"
-    hostname: docker-9c0-com
+    hostname: mkenney-base-web
     volumes:
         - .:/var/www/html/
         - /tmp/docker/var/log/httpd:/var/log/httpd
