@@ -1,4 +1,4 @@
-FROM php:5.6-apache
+FROM php:7-apache
 
 MAINTAINER Michael Kenney <mkenney@webbedlam.com>
 
@@ -32,4 +32,3 @@ WORKDIR /var/www/html
 EXPOSE 80
 
 ENTRYPOINT /usr/sbin/apache2 -D FOREGROUND
-
