@@ -10,8 +10,9 @@ web:
         - /etc/localtime:/etc/localtime:ro
     environment:
         - server_env=dev
-        - env=1
         - is_docker=1
-        - VIRTUAL_HOST=docker.9c0.com # Used in the vhost config and can also be
-                                      # used by the mkenney/reverse-proxy reverse
-                                      # proxy docker container
+        - DOCUMENTROOT_PATH=/var/www/html/documentroot # Configurable, defaults to
+                                                       # /var/www/html/documentroot
+        - VIRTUAL_HOST=michaelkenney.us # Used in the vhost config and can also be
+                                        # used by the mkenney/reverse-proxy reverse
+                                        # proxy docker container

@@ -12,13 +12,13 @@ RUN apt-get install -q -y less
 RUN docker-php-ext-install pdo
 RUN docker-php-ext-install pdo_mysql
 
-# Configure Apache & PHP
-COPY container/etc/apache2/sites-enabled/vhost.conf /etc/apache2/sites-enabled/
-COPY container/etc/php.ini /usr/local/etc/php/php.ini
-
 # Configure terminal
 COPY container/root/ /root/
 
+# Configure Apache & PHP
+COPY container/etc/apache2/sites-enabled/vhost.conf /etc/apache2/sites-enabled/
+COPY container/etc/php.ini /usr/local/etc/php/php.ini
+ENV DOCUMENTROOT_PATH /var/www/html/documentroot
 RUN mkdir -p /var/log/httpd/ \
     && ln -s /dev/stdout /var/log/httpd/access.log \
     && ln -s /dev/stderr /var/log/httpd/error.log \
