@@ -8,6 +8,9 @@ RUN apt-get -q -y update
 # Because some basic tools come in handy...
 RUN apt-get install -q -y less
 
+# for mail()
+RUN apt-get install -q -y sendmail
+
 # Install PHP modules
 RUN docker-php-ext-install pdo
 RUN docker-php-ext-install pdo_mysql
