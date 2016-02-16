@@ -8,7 +8,7 @@ RUN apt-get -q -y update
 # Because some basic tools come in handy...
 RUN apt-get install -q -y less
 
-# for mail()
+# For mail() calls
 RUN apt-get install -q -y sendmail
 
 # Install PHP modules
@@ -23,12 +23,12 @@ RUN a2enmod headers
 
 # Configure Apache & PHP
 COPY container/etc/apache2/sites-enabled/vhost.conf /etc/apache2/sites-enabled/
-COPY container/etc/php.ini /usr/local/etc/php/php.ini
+COPY container/etc/php.ini /usr/local/etc/php/
 ENV DOCUMENTROOT_PATH /var/www/html/documentroot
-RUN mkdir -p /var/log/httpd/
-RUN ln -s /dev/stdout /var/log/httpd/access.log
-RUN ln -s /dev/stderr /var/log/httpd/error.log
-RUN ln -s /dev/stderr /var/log/httpd/php.log
+
+# Configure logging
+RUN rm /var/log/apache2/access.log && ln -s /dev/stdout /var/log/apache2/access.log
+RUN rm /var/log/apache2/error.log &&  ln -s /dev/stdout /var/log/apache2/error.log
 
 WORKDIR /var/www/html
 

@@ -6,7 +6,6 @@ web:
     hostname: mkenney-base-web
     volumes:
         - .:/var/www/html/
-        - /tmp/docker/var/log/httpd:/var/log/httpd
         - /etc/localtime:/etc/localtime:ro
     environment:
         - server_env=dev
