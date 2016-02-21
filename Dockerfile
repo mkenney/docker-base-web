@@ -10,6 +10,7 @@ RUN apt-get install -q -y less
 
 # For mail() calls
 RUN apt-get install -q -y sendmail
+RUN apt-get clean && rm -r /var/lib/apt/lists/*
 
 # Install PHP modules
 RUN docker-php-ext-install pdo
