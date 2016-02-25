@@ -32,6 +32,7 @@ RUN rm /var/log/apache2/access.log && ln -s /dev/stdout /var/log/apache2/access.
 RUN rm /var/log/apache2/error.log &&  ln -s /dev/stdout /var/log/apache2/error.log
 
 WORKDIR /var/www/html
+ENV TERM xterm
 
 EXPOSE 80
 
