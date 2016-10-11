@@ -60,3 +60,4 @@ EXPOSE 80
 # Use a custom entrypoint script to configure port listeners and start
 # apache in the forground with the modified init.d script
 ENTRYPOINT /entrypoint.sh
+
