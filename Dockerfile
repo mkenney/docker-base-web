@@ -36,4 +36,4 @@ ENV TERM xterm
 
 EXPOSE 80
 
-ENTRYPOINT /usr/sbin/apache2 -D FOREGROUND
+ENTRYPOINT source /etc/apache2/envvars && /usr/sbin/apache2 -D FOREGROUND
